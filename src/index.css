@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-rics-purple: #4B2682;
+  --color-rics-purple-light: #6B3FA0;
+  --color-rics-purple-dark: #3A1D66;
+  --color-cr1: #22c55e;
+  --color-cr2: #f59e0b;
+  --color-cr3: #ef4444;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@media print {
+  .ai-thinking-bubble,
+  .source-badge,
+  .edit-controls,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    background: white;
+    color: black;
+  }
+
+  .print-break {
+    page-break-before: always;
+  }
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+}
