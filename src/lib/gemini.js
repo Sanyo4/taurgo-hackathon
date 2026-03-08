@@ -8,7 +8,7 @@ const ai = new GoogleGenAI({
 
 export async function analyseImage(imageBase64, mimeType) {
   const response = await ai.models.generateContent({
-    model: 'gemini-2.0-flash-lite',
+    model: 'gemini-3.1-flash-lite-preview',
     contents: [
       {
         inlineData: {
@@ -22,6 +22,7 @@ export async function analyseImage(imageBase64, mimeType) {
       systemInstruction: ANALYSIS_SYSTEM_PROMPT,
       responseMimeType: 'application/json',
       responseJsonSchema: defectAnalysisJsonSchema,
+      thinkingConfig: { thinkingLevel: 'low' },
     },
   })
 
